@@ -27,10 +27,10 @@ func (m *Spinlock) Lock() {
             break
         }
     }
-    logrus.Info("Mutex locked by routine ")
+    logrus.Info("Mutex locked")
 }
 
 func (m *Spinlock) Unlock() {
     atomic.StoreInt64(&m.state, StateUnlocked)
-    logrus.Infof("Mutex unlocked by routine")
+    logrus.Infof("Mutex unlocked")
 }

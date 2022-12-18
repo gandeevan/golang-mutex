@@ -9,7 +9,7 @@ import (
 // Limitations:
 // Doesn't check if the lock is held by this thread before attempting to unlock.
 // Doesn't ensure fairness (FIFO)
-// Busy looping wastes CPU cycles
+// Wasted context switches
 
 type Yieldlock struct {
     state int64
